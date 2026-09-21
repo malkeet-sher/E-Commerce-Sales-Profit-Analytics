@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project analyzes e-commerce sales data for **NovaCart E-Commerce** from a **Junior Data Analyst** perspective.
+This project analyzes e-commerce transaction data for **NovaCart E-Commerce** from a **Junior Data Analyst** perspective.
 
 The objective was to evaluate sales and profit performance, product and category performance, discount impact, customer trends, return behavior, regional and channel performance, and monthly business trends.
 
@@ -49,11 +49,11 @@ Key fields include:
 - Cost
 - Channel
 
-The raw data intentionally included common real-world data quality issues such as duplicate records, missing values, inconsistent text formatting, mixed discount formats, and return transactions.
+The raw data contains common real-world data quality issues including duplicate records, missing values, inconsistent text formatting, mixed discount formats, and return transactions.
 
 ## Data Cleaning
 
-The dataset was cleaned using Python and Pandas.
+The dataset was cleaned and validated using Python and Pandas.
 
 Main cleaning steps:
 
@@ -70,7 +70,7 @@ Main cleaning steps:
 
 After cleaning:
 
-- **5,000 rows** remained
+- **5,000 rows**
 - **4,929 Sale orders**
 - **71 Return orders**
 
@@ -78,27 +78,27 @@ After cleaning:
 
 ### Overall Performance
 
-- Net Sales: **₹237,972,050**
-- Net Profit: **₹59,716,980**
-- Net Profit Margin: **25.1%**
+- **Net Sales:** ₹237,972,050
+- **Net Profit:** ₹59,716,980
+- **Net Profit Margin:** 25.1%
 
 ### Product Performance
 
 - Laptop generated the highest sales and profit.
-- Mouse had a much lower revenue contribution but the highest profit margin at approximately **41.9%**.
-- Smartphone generated high sales but had a lower profit margin of approximately **18.6%**.
+- Mouse had a much lower revenue contribution but a profit margin of approximately **41.9%**.
+- Smartphone generated high sales but a lower profit margin of approximately **18.6%**.
 
 ### Category Performance
 
 - Electronics generated approximately **₹222.19 million** in sales.
 - Accessories generated approximately **₹15.78 million** in sales.
-- Electronics generated substantially higher profit despite Accessories having higher unit volume.
+- Accessories had higher unit volume, while Electronics generated much higher revenue because of product price mix.
 
 ### Monthly Performance
 
-- December recorded the highest monthly sales at approximately **₹22.38 million**.
-- June recorded the lowest monthly sales at approximately **₹15.41 million**.
-- November recorded the highest monthly profit at approximately **₹5.54 million**.
+- **December:** highest monthly sales at approximately ₹22.38 million
+- **June:** lowest monthly sales at approximately ₹15.41 million
+- **November:** highest monthly profit at approximately ₹5.54 million
 
 ### Channel Performance
 
@@ -113,7 +113,7 @@ After cleaning:
 ### Return Analysis
 
 - **71 return orders** were identified.
-- Returns represented a sales impact of approximately **₹1.23 million**.
+- Returns created approximately **₹1.23 million** negative sales impact.
 - Smartphone had the highest number of return orders.
 - Return activity was analyzed separately from normal sales transactions.
 
@@ -134,6 +134,7 @@ The project includes SQL queries for:
 - Top 10 customers by profit
 - Average Order Value (AOV)
 - Product profitability ranking
+- Window-function based profitability analysis
 
 ## Tableau Dashboard
 
@@ -147,6 +148,10 @@ The interactive Tableau Public dashboard includes:
 - Monthly Sales Trend
 - Channel filtering
 
+### Dashboard Preview
+
+![E-Commerce Sales & Profit Dashboard](dashboard/E-Commerce%20Sales%20%26%20Profit%20Dashboard.png)
+
 ### Tableau Public
 
 [View Interactive Dashboard](https://public.tableau.com/app/profile/malkeet.singh3211/viz/E-Commerce-Sales-Profit-Analytics/E-CommerceSalesProfitDashboard)
@@ -156,8 +161,14 @@ The interactive Tableau Public dashboard includes:
 ```text
 E-Commerce-Sales-Profit-Analytics/
 │
+├── dashboard/
+│   ├── E-Commerce Sales & Profit Dashboard.png
+│   └── E-Commerce-Sales-Profit-Analytics.twbx
+│
 ├── data/
-│   └── ecommerce_orders_clean.csv
+│   ├── ecommerce_orders_raw.csv
+│   ├── ecommerce_orders_clean.csv
+│   └── ecommerce_sales.db
 │
 ├── python/
 │   └── ecommerce_analysis.ipynb
@@ -165,4 +176,4 @@ E-Commerce-Sales-Profit-Analytics/
 ├── sql/
 │   └── ecommerce_analysis.sql
 │
-└── dashboard/
+└── README.md
